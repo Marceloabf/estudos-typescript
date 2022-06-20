@@ -3,7 +3,7 @@
 const nome:string = "Marcelo";
 
 const nomeAlunos:string[] = ["Eduardo", "Samira", "Filomena"];
-const alunos:Array<string> = ["Eduardo", "Samira", "Filomena"]; //Interface
+const alunos:Array<string> = ["Eduardo", "Samira", "Filomena"]; //menos utilizado, mais verboso.
 
 // Tuple - especificar o tipo de cada um dos elementos
 let animais:[string,string,string];
@@ -16,7 +16,12 @@ const aprovado:boolean = true;
 const numeroAlunos:number = 23;
 
 // Enum
-
+enum StatusAprovacao{
+  aprovado = '001',
+  pendente = '002',
+  reprovado = '003'
+}
+const statusAluno1:StatusAprovacao = StatusAprovacao.aprovado
 //any - evitar ao máximo
 const infosAPI:any[] = [true,"oi", 32, 99, "teste"];
 
@@ -87,16 +92,30 @@ const alunosManha: Aluno[] = [
 type Fruta = {
   nome:string,
   cor:string,
-  pesoMax:number,
-  semente:boolean
+  pesoMax?:number,    //interrogação antes dos dois pontos significa que não é opicional.
+  semente:boolean 
 }
 const amora:Fruta = {
-  nome:"amora",
-  cor:"roxo",
+  nome:'amora',
+  cor:'roxo',
   pesoMax:100,
   semente:false
 }
+const maracuja:Fruta = {
+  nome:'maracuja',
+  cor:'amarelo',
+  semente: true
+}
 
+//Type assertion
+const minhaIdade:any = 24;
+(minhaIdade as number).toString() 
+//Realizei o type assertion para especificar o tipo de dado e tambem para ter o autocomplete dos métodos.
+
+const input = document.getElementById('name') as HTMLInputElement; 
+//Type assetion para que o typescript saiba que é um input e não dê erro quando eu tentar acessar o value.
+console.log(input.value);
+// const input =<HTMLInputElement>document.getElementById('name');
 
 //Exercício 1
 type Post = {
