@@ -84,13 +84,13 @@ const alunosManha: Aluno[] = [
   }
 ]
 
-type fruta = {
+type Fruta = {
   nome:string,
   cor:string,
   pesoMax:number,
   semente:boolean
 }
-const amora:fruta = {
+const amora:Fruta = {
   nome:"amora",
   cor:"roxo",
   pesoMax:100,
@@ -99,14 +99,14 @@ const amora:fruta = {
 
 
 //Exercício 1
-type post = {
+type Post = {
   postId:number,
   id:number,
   name:string,
   email:string,
   body:string
 }
-const req1:post = {
+const req1:Post = {
   "postId": 1,
   "id": 1,
   "name": "id labore ex et quam laborum",
